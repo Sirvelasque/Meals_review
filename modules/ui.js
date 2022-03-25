@@ -1,5 +1,4 @@
 import Info from './info.js';
-import { porkMealsUrl } from './urlHandler.js';
 
 const info = new Info();
 
@@ -38,7 +37,6 @@ const display = (title, image, id) => {
   likeCounter.classList.add(`likesCounter${id}`);
   likeBtn.classList.add('like');
   
-
   // Content
   imageContainer.innerHTML = `<img src='${image}'>`;
   textLike.innerHTML = `<div class="title">${title}</div>`;
@@ -59,6 +57,11 @@ const display = (title, image, id) => {
   section.appendChild(box);
 };
 
+const itemCounter = () => {
+  const count = document.querySelectorAll('.box');
+  return count.length;
+};
+
 const init = async () => {
   let meals = [];
   let likes = {};
@@ -70,13 +73,7 @@ const init = async () => {
   });
   const Ingredient = document.querySelector('.active');
   const counter = itemCounter();
-  Ingredient.innerHTML += ` (${counter})`
-};
-
-
-const itemCounter = () => {
-  const count = document.querySelectorAll('.box');
-  return count.length;
+  Ingredient.innerHTML += ` (${counter})`;
 };
 
 export {

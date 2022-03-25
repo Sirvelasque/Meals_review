@@ -1,5 +1,4 @@
-import { porkMealsUrl } from "./urlHandler";
-import { likesUrl } from "./urlHandler";
+import { porkMealsUrl, likesUrl } from './urlHandler.js';
 
 export default class Info {
   getMeals = async () => {
