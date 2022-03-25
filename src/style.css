@@ -38,6 +38,7 @@ nav {
   max-width: 25px;
   max-height: 25px;
   background-size: cover;
+  margin-left: 7px;
 }
 
 #app {
@@ -79,4 +80,8 @@ nav {
 
 title {
   width: 80%;
+}
+
+.likebox {
+  display: flex;
 }
