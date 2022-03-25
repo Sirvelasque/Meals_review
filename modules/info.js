@@ -16,7 +16,7 @@ export default class Info {
     likes = await response.json().catch(() => false);
     if (!likes) return false;
     likes.forEach((e) => {
-      likesHash[e.item_id] = e.likes; 
+      likesHash[e.item_id] = e.likes;
     });
     return likesHash;
   };

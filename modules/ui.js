@@ -64,10 +64,9 @@ const init = async () => {
   likes = await info.getLikes();
   meals.forEach((item) => {
     display(item.strMeal, item.strMealThumb, item.idMeal);
-    like(item.idMeal, likes[item.idMeal])
+    like(item.idMeal, likes[item.idMeal]);
   });
 };
-
 
 export {
   init, like,
