@@ -1,4 +1,5 @@
 import Info from './info.js';
+import { porkMealsUrl } from './urlHandler.js';
 
 const info = new Info();
 
@@ -12,7 +13,7 @@ const like = async (id, num) => {
 };
 
 const newlike = async (id) => {
-  info.addLike(id);
+  await info.addLike(id);
   let likes = {};
   likes = await info.getLikes();
   await like(id, likes[id]);
@@ -36,6 +37,7 @@ const display = (title, image, id) => {
   likebox.classList.add('likebox');
   likeCounter.classList.add(`likesCounter${id}`);
   likeBtn.classList.add('like');
+  
 
   // Content
   imageContainer.innerHTML = `<img src='${image}'>`;
@@ -66,8 +68,17 @@ const init = async () => {
     display(item.strMeal, item.strMealThumb, item.idMeal);
     like(item.idMeal, likes[item.idMeal]);
   });
+  const Ingredient = document.querySelector('.active');
+  const counter = itemCounter();
+  Ingredient.innerHTML += ` (${counter})`
+};
+
+
+const itemCounter = () => {
+  const count = document.querySelectorAll('.box');
+  return count.length;
 };
 
 export {
-  init, like,
+  init, itemCounter,
 };
