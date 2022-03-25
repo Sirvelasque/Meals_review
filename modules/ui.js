@@ -1,7 +1,22 @@
-import { indexOf } from 'lodash';
 import Info from './info.js';
 
 const info = new Info();
+
+const like = async (id, num) => {
+  const counter = document.querySelector(`.likesCounter${id}`);
+  if (num) {
+    counter.innerHTML = `${num}`;
+  } else {
+    counter.innerHTML = '0';
+  }
+};
+
+const newlike = async (id) => {
+  info.addLike(id);
+  let likes = {};
+  likes = await info.getLikes();
+  await like(id, likes[id]);
+};
 
 const display = (title, image, id) => {
   // Create elements
@@ -18,7 +33,7 @@ const display = (title, image, id) => {
   box.classList.add('box');
   imageContainer.classList.add('image');
   textLike.classList.add('title_like');
-  likebox.classList.add('likebox')
+  likebox.classList.add('likebox');
   likeCounter.classList.add(`likesCounter${id}`);
   likeBtn.classList.add('like');
 
@@ -53,22 +68,6 @@ const init = async () => {
   });
 };
 
-const like = async (id, num) => {
-  const counter = document.querySelector(`.likesCounter${id}`);
-  if(num){
-    counter.innerHTML = `${num}`;
-  }else{
-    counter.innerHTML = '0';
-  }
-};
-
-const newlike = async (id) =>{
-  info.addLike(id);
-  let likes = {};
-  likes = await info.getLikes();
-  await like(id, likes[id]);
-
-};
 
 export {
   init, like,

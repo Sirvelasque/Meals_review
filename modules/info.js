@@ -14,9 +14,9 @@ export default class Info {
     const likesHash = {};
     const response = await fetch(likesUrl);
     likes = await response.json().catch(() => false);
-    if(!likes) return false;
+    if (!likes) return false;
     likes.forEach((e) => {
-      likesHash[e.item_id] = e.likes;      
+      likesHash[e.item_id] = e.likes; 
     });
     return likesHash;
   };
