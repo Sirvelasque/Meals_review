@@ -7,7 +7,7 @@ export default class Info {
     const response = await fetch(mealsUrl);
     meals = await response.json();
     return meals.meals;
-  }
+  };
 
   getLikes = async () => {
     let likes = [];
@@ -19,5 +19,15 @@ export default class Info {
       likesHash[e.item_id] = e.likes;      
     });
     return likesHash;
+  };
+
+  addLike = async (id) => {
+    await fetch(likesUrl, {
+      method: 'POST',
+      body: JSON.stringify({
+        item_id: id,
+      }),
+      headers: { 'Content-type': 'application/json; charset=UTF-8' },
+    });
   }
 }

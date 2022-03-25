@@ -27,6 +27,11 @@ const display = (title, image, id) => {
   textLike.innerHTML = `<div class="title">${title}</div>`;
   comment.innerHTML = 'Comment';
 
+  // Events
+  likeBtn.addEventListener('click', () => {
+    newlike(id);
+  });
+
   // Append
   likebox.appendChild(likeCounter);
   likebox.appendChild(likeBtn);
@@ -55,6 +60,14 @@ const like = async (id, num) => {
   }else{
     counter.innerHTML = '0';
   }
+};
+
+const newlike = async (id) =>{
+  info.addLike(id);
+  let likes = {};
+  likes = await info.getLikes();
+  await like(id, likes[id]);
+
 };
 
 export {

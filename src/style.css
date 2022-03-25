@@ -31,12 +31,12 @@ nav {
 }
 
 .like {
-  background-image: url('../assets/istockphoto-1092686808-1024x1024.jpg');
+  background-image: url('../assets/likeR.png');
   background-repeat: no-repeat;
   min-width: 25px;
   min-height: 25px;
-  max-width: 25px;
-  max-height: 25px;
+  max-width: 35px;
+  max-height: 35px;
   background-size: cover;
   margin-left: 7px;
 }
@@ -45,11 +45,13 @@ nav {
   display: flex;
   flex-wrap: wrap;
   padding: 20px 10%;
+  justify-content: space-between;
 }
 
 .box {
   width: 30%;
   min-width: 200px;
+  max-width: 370px;
   height: 450px;
   display: flex;
   flex-direction: column;
