@@ -9,7 +9,7 @@ header {
 
 nav {
   display: flex;
-  padding: 0 150px 0 80px;
+  padding: 0 80px 0 150px;
 }
 
 #logo {
@@ -29,3 +29,56 @@ nav {
 .menu a {
   text-decoration: none;
 }
+
+.like {
+  background-image: url('../assets/istockphoto-1092686808-1024x1024.jpg');
+  background-repeat: no-repeat;
+  min-width: 25px;
+  min-height: 25px;
+  max-width: 25px;
+  max-height: 25px;
+  background-size: cover;
+}
+
+#app {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px 10%;
+}
+
+.box {
+  width: 30%;
+  min-width: 200px;
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 20px;
+}
+
+.image{
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+}
+
+.image img{
+  max-width: 95%;
+  min-width: 300px;
+  max-height: 350px;
+}
+
+.title_like {
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  margin: 5px 0;
+  padding: 0 20px;
+  
+}
+
+title {
+  width: 80%;
+}
+
