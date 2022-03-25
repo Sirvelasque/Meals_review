@@ -18,20 +18,18 @@ const display = (title, image) => {
   box.appendChild(textLike);
   box.appendChild(comment);
   section.appendChild(box);
-}
+};
 
-const init = async() => {
+const init = async () => {
   let meals = [];
   meals = await info.getMeals();
   meals.forEach((item) => {
     display(item.strMeal, item.strMealThumb);
   });
-}
+};
 
-const likes = async() => {
-
-}
-
+const likes = async () => {
+};
 
 export {
   init, likes,
