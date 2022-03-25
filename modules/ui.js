@@ -36,7 +36,7 @@ const display = (title, image, id) => {
   likebox.classList.add('likebox');
   likeCounter.classList.add(`likesCounter${id}`);
   likeBtn.classList.add('like');
-  
+
   // Content
   imageContainer.innerHTML = `<img src='${image}'>`;
   textLike.innerHTML = `<div class="title">${title}</div>`;
