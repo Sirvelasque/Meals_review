@@ -12,7 +12,7 @@ const like = async (id, num) => {
 };
 
 const newlike = async (id) => {
-  info.addLike(id);
+  await info.addLike(id);
   let likes = {};
   likes = await info.getLikes();
   await like(id, likes[id]);
@@ -57,6 +57,11 @@ const display = (title, image, id) => {
   section.appendChild(box);
 };
 
+const itemCounter = () => {
+  const count = document.querySelectorAll('.box');
+  return count.length;
+};
+
 const init = async () => {
   let meals = [];
   let likes = {};
@@ -66,8 +71,11 @@ const init = async () => {
     display(item.strMeal, item.strMealThumb, item.idMeal);
     like(item.idMeal, likes[item.idMeal]);
   });
+  const Ingredient = document.querySelector('.active');
+  const counter = itemCounter();
+  Ingredient.innerHTML += ` (${counter})`;
 };
 
 export {
-  init, like,
+  init, itemCounter,
 };
