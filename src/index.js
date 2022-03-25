@@ -1,4 +1,4 @@
-import App from '../modules/fetching.js';
+import { init } from '../modules/ui.js';
 import './style.css';
-let c = new App();
 
+init();
