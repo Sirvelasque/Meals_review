@@ -1,5 +1,6 @@
 body {
   background-color: bisque;
+  margin: 0;
 }
 
 header {
@@ -33,12 +34,12 @@ nav {
 .like {
   background-image: url('../assets/likeR.png');
   background-repeat: no-repeat;
-  min-width: 25px;
-  min-height: 25px;
-  max-width: 35px;
-  max-height: 35px;
+  min-width: 30px;
+  min-height: 30px;
+  max-width: 30px;
+  max-height: 30px;
   background-size: cover;
-  margin-left: 7px;
+  margin-left: 5px;
 }
 
 #app {
@@ -87,4 +88,13 @@ title {
 
 .likebox {
   display: flex;
+}
+
+footer {
+  border: 1px solid black;
+  height: 50px;
+  align-items: center;
+  padding-left: 20px;
+  position: relative;
+  bottom: 0;
 }
