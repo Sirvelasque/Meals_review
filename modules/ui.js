@@ -28,6 +28,7 @@ const display = (title, image, id) => {
   const likeBtn = document.createElement('div');
   const likeCounter = document.createElement('div');
   const comment = document.createElement('button');
+  const order = document.createElement('button');
 
   // Give them class
   box.classList.add('box');
@@ -41,6 +42,7 @@ const display = (title, image, id) => {
   imageContainer.innerHTML = `<img src='${image}'>`;
   textLike.innerHTML = `<div class="title">${title}</div>`;
   comment.innerHTML = 'Comment';
+  order.textContent = 'Order';
 
   // Events
   likeBtn.addEventListener('click', () => {
@@ -54,6 +56,7 @@ const display = (title, image, id) => {
   box.appendChild(imageContainer);
   box.appendChild(textLike);
   box.appendChild(comment);
+  box.appendChild(order)
   section.appendChild(box);
 };
 
